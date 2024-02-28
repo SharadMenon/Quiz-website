@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+<div class="float justify-center bg-white h-52 w-52">
+    <% if (locals.questions && locals.questions.length > 0) { %>
+        <% locals.questions.forEach(function(questionArray) { %>
+          <% questionArray.forEach(function(question) { %>
+            <h1><%= question.question %></h1>
+            <div>
+              <p><%= question.answers[0].text %></p>
+              <p><%= question.answers[1].text %></p>
+              <p><%= question.answers[2].text %></p>
+              <p><%= question.answers[3].text %></p>
+            </div>
+          <% }) %>
+        <% }) %>
+        <%}%>

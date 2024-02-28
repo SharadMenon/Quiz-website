@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+<div class="flex flex-col items-center justify-center">
+  <a role="button" href="/create" class="btn px-6 m-2 text-lg text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800 grid items-center">Create your own quiz</a>
+</div>
+<% if (locals.title && locals.title.length > 0) { %>
+  <div class="flex flex-wrap">
+    <% locals.title.forEach(function(title) { %>
+      <div class="mr-4 mb-4">
+        <div class="flex flex-col justify-start mt-32 h-36 w-36 bg-green-400">
+          <a class="font-semibold flex justify-center"><%= title %></a>
+          <form action="/question" method="POST">
+          <button type="submit" class="mt-5 btn text-black btn-dark ml-[32%]">Play</button>
+        </form>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+<% } %>
